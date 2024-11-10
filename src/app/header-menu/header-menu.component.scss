@@ -1,0 +1,104 @@
+.menu{
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.cabecalho{
+  display: flex;
+  flex-direction: row;
+}
+
+.logo{
+  background-color: white;
+  width: 33%;
+  height: 80px;
+
+  img{
+    width: 305px;
+    height: 75px;
+  }
+}
+
+.pesquisa{
+  background-color: white;
+  width: 33%;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.box-pesquisa{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 25px;
+  border-color: #F26530;
+  border-width: 3px;
+  padding-left: 20px;
+  width: 400px;
+  height: 50px;
+  font-size: large;
+}
+
+.acesso{
+  background-color: white;
+  width: 33%;
+  height: 80px;
+  flex-direction: row;
+
+  div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: "Inria Sans",sans-serif;
+    font-size: 105%;
+    align-items: center;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: pre-wrap;
+
+    img{
+      width: 73px;
+      height: 73px;
+    }
+  }
+}
+
+.categorias{
+  background-color: #F26530;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+
+  ul{
+    font-family: "Inria Sans",sans-serif;
+    color: white;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-inline-start: 0;
+    width: 100%;
+
+    li{
+      text-align: center;
+      text-transform: uppercase;
+      width: 16%;
+      font-size: 36px;
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      justify-content: center;
+
+      img{
+        width: 60px;
+        height: 55px;
+      }
+    }
+  }
+}
