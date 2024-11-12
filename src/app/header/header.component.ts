@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'app-header-menu',
+  selector: 'app-header',
   standalone: true,
   imports: [MatListModule,NgOptimizedImage],
-  templateUrl: './header-menu.component.html',
-  styleUrl: './header-menu.component.scss',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
 })
-export class HeaderMenuComponent {
+export class HeaderComponent {
 
 }
