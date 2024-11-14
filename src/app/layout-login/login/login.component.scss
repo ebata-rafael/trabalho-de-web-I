@@ -1,0 +1,74 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  min-width: 15rem;
+  height: auto;
+  margin-left: 12rem;
+  margin-right: 12rem;
+
+  h1 strong, .h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .input,input,.btn {
+    font-size: 1rem;
+    height: 4rem;
+    margin-bottom: 3rem;
+    border-radius: 50px;
+    border-color: black;
+  }
+
+  .btn {
+    font-weight: 500;
+    font-size: 1.3rem;
+    background-color: #F26530;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    display: flex;
+    font-size: 1.3rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    a {
+      text-decoration: none;
+      color: #F26530;
+    }
+  }
+}
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  color:#F26530
+}
+
+.divider {
+  flex: 1;
+  border-bottom: 5px solid #F26530;
+  /* Cor da linha */
+}
+
+.divider:not(:empty)::before {
+  content: ' ';
+  display: inline-block;
+  width: 100%;
+  /* Ajusta o espaço ao redor da palavra */
+}
+
+.divider-word {
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  /* Opção para deixar a palavra em negrito */
+}
