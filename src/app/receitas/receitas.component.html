@@ -1,0 +1,12 @@
+<ul>
+  @for (recipe of recipes; track recipe.category.id) {
+    <li>
+      {{recipe.name}}
+      {{recipe.description}}
+      {{recipe.category.id}}
+      {{recipe.preparationTime}}
+      {{recipe.portion}}
+      {{recipe.calories}}
+    </li>
+  }
+</ul>
