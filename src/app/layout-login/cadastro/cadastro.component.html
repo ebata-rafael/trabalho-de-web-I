@@ -1,34 +1,30 @@
-<div class="form">
-  <h1 class="h3 fw-normal" _msttexthash="400010" _msthash="6"><strong>Cadastre sua conta</strong></h1>
-
+<form class="form" (ngSubmit)="register()">
+  <h1 class="h3 fw-normal"><strong>Cadastre sua conta</strong></h1>
+  <div *ngIf="message" class="alert alert-success">{{ message }}</div> <!-- Mensagem de confirmação -->
   <div class="form-floating input">
-    <input type="text" class="form-control" id="floatingInput" placeholder="João Marcos" _mstplaceholder="299455" _msthash="7">
-    <label for="floatingInput" _msttexthash="441363" _msthash="8">Nome</label>
+    <input required type="text" id="name" name="name" autocomplete="username" class="form-control"
+      placeholder="João Marcos" [(ngModel)]="user.name">
+    <label for="name">Nome</label>
   </div>
   <div class="form-floating input">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" _mstplaceholder="299455" _msthash="7">
-    <label for="floatingInput" _msttexthash="441363" _msthash="8">Email</label>
+    <input required type="email" class="form-control" id="email" autocomplete="email" placeholder="name@example.com"
+      [(ngModel)]="user.email" name="email">
+    <label for="email">Email</label>
   </div>
   <div class="form-floating input">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" _mstplaceholder="117572" _msthash="9">
-    <label for="floatingPassword" _msttexthash="58318" _msthash="10">Senha</label>
+    <input autocomplete="new-password" minlength="8" type="password" class="form-control" id="password"
+      placeholder="Senha" [(ngModel)]="user.password" name="password" required>
+    <label for="password">Senha</label>
   </div>
   <div class="form-floating input">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" _mstplaceholder="117572" _msthash="9">
-    <label for="floatingPassword" _msttexthash="58318" _msthash="10">Confirmação de senha</label>
+    <input autocomplete="new-password" minlength="8" type="password" class="form-control" id="confirmPassword"
+      placeholder="Confirmação de senha" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+    <label for="confirmPassword">Confirmação de senha</label>
   </div>
-  <!-- <button class="btn btn-primary " type="submit" _msttexthash="77766" _msthash="12">Entrar</button> -->
-
-  <!-- <p class="link"><a href=""><strong>Esqueci minha senha</strong></a></p> -->
-
-  <a class="btn btn-primary " type="submit" _msttexthash="77766" _msthash="12">Cadastrar</a>
-
+  <button class="btn btn-primary" type="submit">Cadastrar</button>
   <div class="divider-container">
     <div class="divider"></div>
     <div class="divider-word">ou</div>
     <div class="divider"></div>
-  </div>
-
-  <a routerLink="/user/login"  class="btn btn-primary " type="submit" _msttexthash="77766" _msthash="12">Login</a>
-
-</div>
+  </div> <a routerLink="/user/login" class="btn btn-primary">Login</a>
+</form>
