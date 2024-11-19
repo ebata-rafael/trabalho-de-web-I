@@ -30,6 +30,17 @@
   img {
     width: 73px;
   }
+
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
 }
 
 .categorias {
