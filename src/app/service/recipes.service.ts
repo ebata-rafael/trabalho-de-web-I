@@ -7,7 +7,7 @@ import { RecipeResponse } from '../models/recipe.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ReceitasService {
+export class RecipesService {
   private readonly API = environment.URL_BASE + '/recipes';
   private readonly http = inject(HttpClient);
 

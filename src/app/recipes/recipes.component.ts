@@ -1,19 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ReceitasService } from '../service/receitas.service';
 import { RecipeResponse } from '../models/recipe.model';
 import { CommonModule } from '@angular/common';
+import { RecipesService } from '../service/recipes.service';
 
 @Component({
-  selector: 'app-receitas',
+  selector: 'app-recipes',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './receitas.component.html',
-  styleUrl: './receitas.component.scss'
+  templateUrl: './recipes.component.html',
+  styleUrl: './recipes.component.scss'
 })
 
-export class ReceitasComponent implements OnInit{
+export class RecipesComponent implements OnInit{
 
-  private readonly recipeService = inject(ReceitasService);
+  private readonly recipeService = inject(RecipesService);
 
 
   recipes: RecipeResponse = { meta: { itemCount: 0, totalItems: 0, itemsPerPage: 0, totalPages: 0, currentPage: 0 }, items: [] };

@@ -1,0 +1,29 @@
+<div *ngIf="recipes">
+  <div *ngFor="let item of recipes.items">
+    <h3>{{ item.name }}</h3>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Category:</strong> {{ item.category.name }}</p>
+    <p><strong>Preparation Time:</strong> {{ item.preparationTime }} minutes</p>
+    <p><strong>Portion:</strong> {{ item.portion }}</p>
+    <p><strong>Calories:</strong> {{ item.calories }}</p>
+    <p><strong>Published At:</strong> {{ item.published_at }}</p>
+    <p><strong>User:</strong> {{ item.user.name }} ({{ item.user.email }})</p>
+    <p><strong>Score:</strong> {{ item.score }}</p>
+    <h4>Ingredients</h4>
+    <ul>
+      <li *ngFor="let ingredient of item.ingredients"> {{ ingredient.name }} - {{ ingredient.amount }} {{
+        ingredient.type }} </li>
+    </ul>
+    <h4>Instructions</h4>
+    <ul>
+      <li *ngFor="let instruction of item.instructions"> {{ instruction.step }} </li>
+    </ul>
+    <h4>Ratings</h4>
+    <ul>
+      <li *ngFor="let rating of item.ratings"> {{ rating.user.name }} rated {{ rating.rating }}: {{ rating.comment }}
+      </li>
+    </ul>
+    <p><strong>Created At:</strong> {{ item.dateCreated }}</p>
+    <p><strong>Last Updated:</strong> {{ item.lastUpdated }}</p>
+  </div>
+</div>

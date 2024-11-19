@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
-import { ReceitasComponent } from "../receitas/receitas.component";
+import { RecipesComponent } from "../recipes/recipes.component";
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [HeaderComponent, ReceitasComponent],
+  imports: [HeaderComponent, RecipesComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
