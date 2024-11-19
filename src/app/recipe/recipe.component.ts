@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RecipesService } from '../service/recipes.service';
 import { RecipeResponse } from '../models/recipe.model';
 import { CommonModule } from '@angular/common';
+import { RecipesService } from '../service/recipes.service';
 
 @Component({
   selector: 'app-recipe',
@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss'
 })
-export class RecipesComponent implements OnInit{
+
+export class RecipeComponent implements OnInit{
 
   private readonly recipeService = inject(RecipesService);
 
