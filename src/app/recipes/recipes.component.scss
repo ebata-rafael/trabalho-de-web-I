@@ -1,0 +1,33 @@
+.formatFlex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerCard{
+  // Texto
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  color: white;
+
+  background: linear-gradient(to right, #f26530 60%, #097D4C 40%)
+
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.star-filled {
+  color: gold; /* Estrelas preenchidas em dourado */
+  font-size: 1.5rem;
+}
+
+.star-empty {
+  color: lightgray; /* Estrelas vazias em cinza claro */
+  font-size: 1.5rem;
+}

@@ -21,5 +21,10 @@ export class RecipesComponent implements OnInit{
     this.recipeService.list().subscribe((result) => {
       this.recipes = result;
     });
+
+  }
+
+  getStars(score: number): Array<number> {
+    return Array(score).fill(0);
   }
 }
