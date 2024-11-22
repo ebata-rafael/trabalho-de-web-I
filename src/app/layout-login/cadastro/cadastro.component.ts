@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../../service/user.service';
@@ -12,10 +12,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cadastro.component.scss',
 })
 export class CadastroComponent {
+
   user = { name: '', email: '', password: '' };
   confirmPassword = '';
   message = ''; // Propriedade para exibir mensagem de confirmação
-  constructor(private userService: UserService) {}
+
+  private readonly userService = inject(UserService);
+
   register() {
     if (this.user.password === this.confirmPassword) {
       this.userService.createUser(this.user).subscribe(

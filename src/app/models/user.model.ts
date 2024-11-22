@@ -1,8 +1,12 @@
-export interface UserResponse{
+export interface User extends Partial<Login>{
+  id: number;
   name: string;
   email: string;
-  password: string;
-  id: number;
-  dateCreated: string;
-  lastUpdated: string;
+  dateCreated: Date;
+  lastUpdated: Date;
+}
+
+export interface Login {
+  access_token: string;
+  token_type: string;
 }

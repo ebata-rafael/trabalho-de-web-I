@@ -1,15 +1,15 @@
-<div class="form">
+<div class="form" [formGroup]="form">
   <h1 class="h3 fw-normal" _msttexthash="400010" _msthash="6"><strong>Acesse sua conta</strong></h1>
 
   <div class="form-floating input">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" _mstplaceholder="299455" _msthash="7">
+    <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" _mstplaceholder="299455" _msthash="7">
     <label for="floatingInput" _msttexthash="441363" _msthash="8">Email</label>
   </div>
   <div class="form-floating input">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" _mstplaceholder="117572" _msthash="9">
+    <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Senha" _mstplaceholder="117572" _msthash="9">
     <label for="floatingPassword" _msttexthash="58318" _msthash="10">Senha</label>
   </div>
-  <a class="btn btn-primary " type="submit" _msttexthash="77766" _msthash="12">Entrar</a>
+  <button class="btn btn-primary " type="submit" _msttexthash="77766" _msthash="12" (click)="login()">Entrar</button>
 
   <p class="link"><a href=""><strong>Esqueci minha senha</strong></a></p>
 

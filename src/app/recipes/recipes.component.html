@@ -1,28 +1,20 @@
-<div *ngIf="recipes">
+<div *ngIf="recipes" class="caixa">
   <div *ngFor="let item of recipes.items">
     <div class="card border-success" style="max-width: 18rem">
       <div class="card-header border-success formatFlex headerCard">
-        <i
-          ><span class="left">{{ item.name }}</span></i
-        >
-        <i
-          ><span class="right">{{ item.portion }} porções</span></i
-        >
+
+        <i><span class="left">{{ item.name }}</span></i>
+        <i><span class="right">{{ item.portion }} porções</span></i>
+        
       </div>
       <div class="card-body text-success">
         <h5 class="card-title">A imagem apareceria aqui</h5>
       </div>
-      <div
-        class="card-footer bg-transparent border-success formatFlex footerCard"
-      >
+      <div class="card-footer bg-transparent border-success formatFlex footerCard">
         <span class="left">
           <span class="left">Avaliação: </span>
-          <span *ngFor="let star of getStars(item.score)" class="star-filled"
-            >★</span
-          >
-          <span *ngFor="let star of getStars(5 - item.score)" class="star-empty"
-            >☆</span
-          >
+          <span *ngFor="let star of getStars(item.score)" class="star-filled">★</span>
+          <span *ngFor="let star of getStars(5 - item.score)" class="star-empty">☆</span>
         </span>
         <span class="right">Tempo: {{ item.preparationTime }} min</span>
       </div>
