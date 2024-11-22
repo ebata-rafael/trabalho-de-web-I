@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { RecipesService } from '../service/recipes.service';
 import { RecipeResponse } from '../models/recipe.model';
 import { CommonModule } from '@angular/common';
-import { RecipesService } from '../service/recipes.service';
 
 @Component({
   selector: 'app-recipes',
@@ -10,7 +10,6 @@ import { RecipesService } from '../service/recipes.service';
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.scss'
 })
-
 export class RecipesComponent implements OnInit{
 
   private readonly recipeService = inject(RecipesService);
@@ -22,5 +21,10 @@ export class RecipesComponent implements OnInit{
     this.recipeService.list().subscribe((result) => {
       this.recipes = result;
     });
+
+  }
+
+  getStars(score: number): Array<number> {
+    return Array(score).fill(0);
   }
 }
