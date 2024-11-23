@@ -12,7 +12,6 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
   private readonly authService = inject(AuthService);
@@ -40,7 +39,7 @@ export class LoginComponent {
         },
         error: (resp) => {
           this.errorMessage = resp.error.message;
-        },
+        }
       });
     } else {
       this.errorMessage = 'Há campos inválidos no formulário!';

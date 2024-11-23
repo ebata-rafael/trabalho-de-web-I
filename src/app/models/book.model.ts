@@ -5,4 +5,10 @@ export interface BookResponse {
 export interface Book {
   id: number;
   name: string;
+  dateCreated: Date;
+  lastUpdated: Date;
+}
+
+export interface CreateBookDto{
+  name: string;
 }

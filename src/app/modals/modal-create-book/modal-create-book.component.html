@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Novo livro</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="book-name" class="col-form-label">Nome:</label>
+      <input formControlName="name" type="text" class="form-control" id="book-name">
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Fechar</button>
+  <button type="button" class="btn btn-default" (click)="createBook()">Criar livro</button>
+</div>
