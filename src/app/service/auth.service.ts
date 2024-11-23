@@ -37,7 +37,6 @@ export class AuthService {
             const headers = {
               Authorization: `${resp.token_type} ${resp.access_token}`,
             };
-
             return this.http.get<User>(this.baseAPI + '/me', { headers }).pipe(
               map((user) => {
                 user = { ...user, ...resp };

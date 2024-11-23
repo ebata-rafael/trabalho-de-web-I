@@ -10,7 +10,6 @@
   background-color: #f8f9fa;
 
   display: flex;
-  align-items: flex-end;
 
   .sidebar>div,
   button {
@@ -23,6 +22,10 @@
 
   .btn-danger {
     margin-left: 10px;
+  }
+
+  .btn {
+    --bs-btn-border-width: none;
   }
 }
 
