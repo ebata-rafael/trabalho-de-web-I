@@ -3,7 +3,7 @@
   <div *ngIf="books">
     <div *ngFor="let book of books.items">
       <div class="d-flex justify-content-between align-items-center">
-        <span class="book-title fw-bold"><button class="btn">{{ book.name }}</button></span>
+        <span><button class="btn book-title fw-bold">{{ book.name }}</button></span>
         <button class="btn btn-danger btn-sm" (click)="confirmDelete(book.id)">Excluir</button>
       </div>
     </div>
