@@ -1,3 +1,14 @@
+export interface CreateRecipeDto{
+  name: string;
+  description: string;
+  preparationTime: number;
+  portion: number;
+  calories: number;
+  category: {
+    id: number;
+  }
+}
+
 export interface RecipeResponse {
   meta: {
     itemCount: number;
@@ -9,60 +20,16 @@ export interface RecipeResponse {
   items: Recipe[];
 }
 export interface Recipe {
+  id: number;
+  dataCreated: Date;
+  lastUpdate: Date;
   name: string;
   description: string;
-  category: {
-    name: string;
-    id: number;
-    dateCreated: string;
-    lastUpdated: string;
-  };
   preparationTime: number;
   portion: number;
   calories: number;
-  published_at: string;
-  user: {
-    name: string;
-    email: string;
-    password: string;
-    id: number;
-    dateCreated: string;
-    lastUpdated: string;
-  };
+  published_at: Date;
+  categoryId: number;
+  userId: number;
   score: number;
-  ingredients: {
-    recipe: string;
-    name: string;
-    amount: number;
-    type: string;
-    id: number;
-    dateCreated: string;
-    lastUpdated: string;
-  }[];
-  instructions: {
-    recipe: string;
-    step: string;
-    id: number;
-    dateCreated: string;
-    lastUpdated: string;
-  }[];
-  ratings: {
-    recipe: string;
-    user: {
-      name: string;
-      email: string;
-      password: string;
-      id: number;
-      dateCreated: string;
-      lastUpdated: string;
-    };
-    rating: number;
-    comment: string;
-    id: number;
-    dateCreated: string;
-    lastUpdated: string;
-  }[];
-  id: number;
-  dateCreated: string;
-  lastUpdated: string;
 }
