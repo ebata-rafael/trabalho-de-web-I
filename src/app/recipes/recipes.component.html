@@ -30,7 +30,7 @@
     }
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-md-6 offset-md-3 d-flex justify-content-center">
       @if (recipes) {
         <pagination class="align-items-center" [totalItems]="recipes.meta.totalItems" [itemsPerPage]="8" (pageChanged)="pageChanged($event)"></pagination>
       }
