@@ -1,20 +1,22 @@
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { BookService } from './../service/book.service';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { BookResponse } from '../models/book.model';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { ModalDeleteComponent } from '../modals/modal-delete/modal-delete.component';
 import { ModalCreateBookComponent } from '../modals/modal-create-book/modal-create-book.component';
-import { debounceTime, take } from 'rxjs';
+import { take } from 'rxjs';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalPatchBookComponent } from '../modals/modal-patch-book/modal-patch-book.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, BsDropdownModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
-  providers: [BsModalService],
+  providers: [BsModalService]
 })
 export class SidebarComponent implements OnInit {
   private readonly bookService = inject(BookService);
@@ -52,6 +54,17 @@ export class SidebarComponent implements OnInit {
 
   confirmDelete(bookId: number) {
     const modal = this.modalService.show(ModalDeleteComponent, {
+      initialState: { id: bookId }
+    });
+    modal.content?.onClose.pipe(take(1)).subscribe((resp) => {
+      if(resp){
+        this.listar();
+      }
+    });
+  }
+
+  update(bookId: number){
+    const modal = this.modalService.show(ModalPatchBookComponent,{
       initialState: { id: bookId }
     });
     modal.content?.onClose.pipe(take(1)).subscribe((resp) => {

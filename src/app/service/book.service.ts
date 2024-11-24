@@ -24,4 +24,8 @@ export class BookService {
     return this.http.delete<Book>(this.API + '/' + id);
   }
 
+  update(id: number, name: string): Observable<Book>{
+    return this.http.patch<Book>(this.API + '/' + id, {name});
+  }
+
 }
