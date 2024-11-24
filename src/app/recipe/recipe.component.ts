@@ -1,26 +1,35 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { RecipeResponse } from '../models/recipe.model';
+import { Component, inject, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RecipesService } from '../service/recipes.service';
+import { CreateRecipeDto } from '../models/recipe.model';
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss'
 })
 
-export class RecipeComponent implements OnInit{
+export class RecipeComponent{
 
-  private readonly recipeService = inject(RecipesService);
+  private readonly fb = inject(FormBuilder);
+  private readonly recipesService = inject(RecipesService);
+
+  recipe = this.fb.nonNullable.group({
+    name: '',
+    preparationTime: 0,
+    portion: 0,
+    calories: 0,
+    description: '',
+    categoryId: 0,
+    score: 0
+  })
 
 
-  recipes: RecipeResponse = { meta: { itemCount: 0, totalItems: 0, itemsPerPage: 0, totalPages: 0, currentPage: 0 }, items: [] };
-
-  ngOnInit(): void {
-    this.recipeService.list().subscribe((result) => {
-      this.recipes = result;
-    });
+  createRecipe(){
+    this.recipesService.createRecipe({...this.recipe.value, category: {id: this.recipe.value.categoryId}} as CreateRecipeDto).subscribe();
   }
+
 }
