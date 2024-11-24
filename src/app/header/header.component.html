@@ -1,11 +1,13 @@
 <div class="container-fluid text-center">
   <div class="row align-items-center">
     <div class="col-12 col-lg col-xl">
-      <img
-        class="logo"
-        src="Logo inteiro.svg"
-        alt="logo do site, garfo e faca cruzados com um chapeu de cozinheiro"
-      />
+      <a routerLink="/home/recipes">
+        <img
+          class="logo"
+          src="Logo inteiro.svg"
+          alt="logo do site, garfo e faca cruzados com um chapeu de cozinheiro"
+        />
+      </a>
     </div>
     <div class="col-12 col-lg-6 col-xl">
       <input
@@ -17,24 +19,46 @@
     </div>
     <div class="col-12 col-lg-6 col-xl">
       <div class="row acesso">
-        <div class="col">
-          <a routerLink="/home/books">
-            <img src="book.svg" alt="icone de soma" />
-            <strong>Livro de receitas</strong>
-          </a>
-        </div>
-        <div class="col">
-          <a routerLink= '/user/cadastro'>
-            <img src="icone-cadastro.svg" alt="icone de soma" />
-            <strong>Cadastrar-se</strong>
-          </a>
-        </div>
-        <div class="col">
-          <a routerLink= '/user/login'>
-            <img src="icone-usuario.svg" alt="icone de uma pessoa" />
-            <strong>Faça login aqui</strong>
-          </a>
-        </div>
+        @if(isLogin){
+          <div class="col">
+            <a routerLink="/home/books">
+              <img src="book-open.svg" alt="icone do livre aberto" />
+              <strong>Livro de receitas</strong>
+            </a>
+          </div>
+          <div class="col">
+            <a routerLink="/user/cadastro">
+              <img src="user-logado.svg" alt="icone de uma pessoa mas com um botão de acrescimo" />
+              <strong>Meu Perfil</strong>
+            </a>
+          </div>
+          <div class="col">
+            <a routerLink="/user/login">
+              <img src="exit.svg" alt="icone de saida" />
+              <strong>Sair</strong>
+            </a>
+          </div>
+        }
+        @else{
+          <div class="col">
+            <a routerLink="/home/books">
+              <img src="book.svg" alt="icone de soma" />
+              <strong>Livro de receitas</strong>
+            </a>
+          </div>
+          <div class="col">
+            <a routerLink="/user/cadastro">
+              <img src="icone-cadastro.svg" alt="icone de soma" />
+              <strong>Cadastrar-se</strong>
+            </a>
+          </div>
+          <div class="col">
+            <a routerLink="/user/login">
+              <img src="icone-usuario.svg" alt="icone de uma pessoa" />
+              <strong>Faça login aqui</strong>
+            </a>
+          </div>
+        }
       </div>
     </div>
   </div>

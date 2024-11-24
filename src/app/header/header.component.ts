@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthService } from './../service/auth.service';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink } from '@angular/router';
 
@@ -9,6 +10,14 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  isLogin: boolean = false;
 
+  constructor(private authService: AuthService){
+
+  }
+
+  ngOnInit(): void{
+    this.isLogin = this.authService.isLoggedIn();
+  }
 }
