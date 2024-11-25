@@ -29,5 +29,4 @@ export class RecipesService {
   createRecipe(recipe: CreateRecipeDto): Observable<Recipe>{
     return this.http.post<Recipe>(this.API, recipe);
   }
-
 }
