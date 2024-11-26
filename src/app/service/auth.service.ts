@@ -55,6 +55,7 @@ export class AuthService {
   logout(): void {
     this.storageService.remove('user');
     this.currentUserSubject.next(null);
+    this.router.navigate(['/user/login']);
   }
 
   getCurrentUserValue(): User | null {

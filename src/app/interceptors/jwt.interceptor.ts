@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
-  const router = inject(Router)
+  const router = inject(Router);
   const user = authService.getCurrentUserValue();
   if (!user || !user.access_token) {
     // informo que não é possivel enviar o token

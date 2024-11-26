@@ -1,0 +1,40 @@
+.titulo{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card{
+  background-color: #0000001a;
+}
+
+.form-group{
+  margin-top: 1rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+
+  input{
+    background-color: #0000001a;
+  }
+
+  strong{
+    font-size: 1.2rem;
+  }
+}
+
+.btn-secondary{
+  background-color: #097D4C;
+  border-color: #097D4C;
+}
+
+.content{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.divider {
+  border-bottom: 1px solid;
+}

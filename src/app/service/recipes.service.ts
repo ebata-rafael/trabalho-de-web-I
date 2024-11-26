@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CreateRecipeDto, Recipe, RecipeResponse } from '../models/recipe.model';
+import { Ingrediente } from '../models/ingrediente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class RecipesService {
 
   createRecipe(recipe: CreateRecipeDto): Observable<Recipe>{
     return this.http.post<Recipe>(this.API, recipe);
+  }
+
+  createIngrediente(id: number, ingredientes: Ingrediente): Observable<Ingrediente>{
+    return this.http.post<Ingrediente>(this.API + '/' + id + '/ingredients', ingredientes);
   }
 
 }

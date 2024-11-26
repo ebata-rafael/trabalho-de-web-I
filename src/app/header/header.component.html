@@ -27,16 +27,16 @@
             </a>
           </div>
           <div class="col">
-            <a routerLink="/user/cadastro">
+            <a routerLink="/home/perfil">
               <img src="user-logado.svg" alt="icone de uma pessoa mas com um botão de acrescimo" />
               <strong>Meu Perfil</strong>
             </a>
           </div>
           <div class="col">
-            <a routerLink="/user/login">
+            <button (click)="sair()">
               <img src="exit.svg" alt="icone de saida" />
               <strong>Sair</strong>
-            </a>
+            </button>
           </div>
         }
         @else{

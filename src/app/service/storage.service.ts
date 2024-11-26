@@ -5,6 +5,7 @@ import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root',
 })
+
 export class StorageService {
   private ls: SecureLS = new SecureLS({ encodingType: 'aes' });
   private prefix: string = 'recipes_';
