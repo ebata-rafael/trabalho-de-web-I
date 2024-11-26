@@ -15,4 +15,16 @@ export class UserService {
   createUser(user: CreateUserDto): Observable<User> {
     return this.http.post<User>(this.API, user);
   }
+
+  updateName(id: string, name: string): Observable<User> {
+    return this.http.patch<User>(this.API + '/' + id, {name});
+  }
+
+  updateEmail(id: string, email: string): Observable<User> {
+    return this.http.patch<User>(this.API + '/' + id, {email});
+  }
+
+  updatePassword(id: string, password: string): Observable<User> {
+    return this.http.patch<User>(this.API + '/' + id, {password});
+  }
 }

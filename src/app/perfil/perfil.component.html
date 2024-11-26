@@ -1,1 +1,86 @@
+<div *ngIf="user">
+  <div class="container mt-5">
+    <h1 class="titulo fw-bold">Alterar dados</h1>
+    <form [formGroup]="form">
 
+      <!-- Nome -->
+      <div class="form-group">
+        <label for="nome"><strong>Nome</strong></label>
+        <div class="card" id="nome">
+          <div class="card-body">
+            {{user.name}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Novo nome -->
+      <div class="form-group">
+        <label for="novo"><strong>Novo nome</strong></label>
+        <input formControlName="name" type="text" class="form-control" id="novo" placeholder="Digite o novo nome">
+      </div>
+
+      <!-- Botão -->
+      <div class="content">
+        <button type="submit" class="btn btn-secondary" (click)="alterarNome()">Salvar</button>
+      </div>
+
+      <div class="form-group">
+        <div class="divider"></div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="container mt-5">
+    <form [formGroup]="form">
+
+      <!-- email -->
+      <div class="form-group">
+        <label for="email"><strong>Email</strong></label>
+        <div class="card" id="email">
+          <div class="card-body">
+            {{user.email}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Novo email -->
+      <div class="form-group">
+        <label for="email"><strong>Novo email</strong></label>
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Digite o novo email">
+      </div>
+
+      <!-- Botão -->
+      <div class="content">
+        <button type="submit" class="btn btn-secondary" (click)="alterarEmail()">Salvar</button>
+      </div>
+
+      <div class="form-group">
+        <div class="divider"></div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="container mt-5">
+    <form [formGroup]="form">
+
+      <!-- senha -->
+      <div class="form-group">
+        <label for="senha"><strong>Nova senha</strong></label>
+        <input formControlName="password" type="password" class="form-control" id="senha" placeholder="Digite a nova senha">
+      </div>
+
+      <!-- confirm Senha -->
+      <div class="form-group">
+        <label for="senha"><strong>Confirme a senha</strong></label>
+        <input formControlName="confirmPassword" type="password" class="form-control" id="senha" placeholder="Confirm a senha">
+      </div>
+
+      <!-- Botão -->
+      <div class="content">
+        <button type="submit" class="btn btn-secondary" (click)="alterarPassword()">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
