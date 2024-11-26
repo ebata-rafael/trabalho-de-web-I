@@ -34,5 +34,3 @@ export class RecipesService {
   createIngrediente(id: number, ingredientes: Ingrediente): Observable<Ingrediente>{
     return this.http.post<Ingrediente>(this.API + '/' + id + '/ingredients', ingredientes);
   }
-
-}

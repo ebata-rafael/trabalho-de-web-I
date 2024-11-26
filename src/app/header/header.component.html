@@ -31,6 +31,13 @@
               <img src="user-logado.svg" alt="icone de uma pessoa mas com um botão de acrescimo" />
               <strong>Meu Perfil</strong>
             </a>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border: none; padding: 0;">
+              <img class="img-fluid" src="menu-receitas.svg">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/home/perfil" class="dropdown-item" >Perfil</a></li>
+              <li><a class="dropdown-item" >Minhas receitas</a></li>
+            </ul>
           </div>
           <div class="col">
             <button (click)="sair()">
