@@ -8,7 +8,3 @@ export interface Book {
   dateCreated: Date;
   lastUpdated: Date;
 }
-
-export interface CreateBookDto{
-  name: string;
-}

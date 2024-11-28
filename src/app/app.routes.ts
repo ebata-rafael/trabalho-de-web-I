@@ -8,6 +8,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 
 export const routes: Routes = [
   {
@@ -19,7 +20,7 @@ export const routes: Routes = [
     path: 'home',
     component: LayoutComponent,
     children: [
-      {path: 'recipe', component: RecipeComponent},
+      {path: 'create-recipe', component: CreateRecipeComponent},
       {path: 'recipes', component: RecipesComponent},
       {path: 'books', component: SidebarComponent, canActivate: [authGuard]},
       {path: 'perfil', component: PerfilComponent, canActivate: [authGuard]}
