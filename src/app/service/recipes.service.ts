@@ -21,6 +21,18 @@ export class RecipesService {
     return this.http.get<RecipeResponse>(this.API,{params});
   }
 
+  listMineRecipes(page:number, limit:number): Observable<RecipeResponse> {
+    // Define a quantidade de itens que serão retornados
+    const params = new HttpParams().set("limit",limit).set('page', page);
+    return this.http.get<RecipeResponse>(this.API + '/mine',{params});
+  }
+
+  getRecipeById(id: string): Observable<RecipeResponse> {
+    const url = `${this.API}/${id}`;
+    return this.http.get<RecipeResponse>(url);
+  }
+
+
   Id(page:number, limit:number, id: number): Observable<RecipeResponse> {
 
     const params = new HttpParams().set("limit",limit).set('page', page);
@@ -34,3 +46,4 @@ export class RecipesService {
   createIngrediente(id: number, ingredientes: Ingrediente): Observable<Ingrediente>{
     return this.http.post<Ingrediente>(this.API + '/' + id + '/ingredients', ingredientes);
   }
+}

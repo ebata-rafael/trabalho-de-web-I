@@ -1,0 +1,38 @@
+h1{
+  color: #f26530;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 4rem;
+}
+
+h3{
+  align-items: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.star-filled {
+  color: gold;
+  font-size: 2rem;
+}
+
+.star-empty {
+  color: lightgray;
+  font-size: 2rem;
+}
+
+.formatPorcao{
+  border-radius: 25px;
+  border-color: #f26530;
+  color: white;
+  border-width: 3px;
+  padding-left: 20px;
+  width: 400px;
+  height: 50px;
+  font-size: large;
+}
