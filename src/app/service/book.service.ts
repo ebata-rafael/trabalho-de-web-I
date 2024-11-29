@@ -1,8 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Book, BookResponse } from '../models/book.model';
 import { Observable } from 'rxjs';
+import { RecipeResponse } from '../models/recipe.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,12 @@ export class BookService {
 
   update(id: number, name: string): Observable<Book>{
     return this.http.patch<Book>(this.API + '/' + id, {name});
+  }
+
+  listBookRecipes(bookId: number, page:number, limit:number): Observable<RecipeResponse> {
+    // Define a quantidade de itens que serão retornados
+    const params = new HttpParams().set("limit",limit).set('page', page);
+    return this.http.get<RecipeResponse>(this.API + '/' + bookId + '/recipes' ,{params});
   }
 
 }

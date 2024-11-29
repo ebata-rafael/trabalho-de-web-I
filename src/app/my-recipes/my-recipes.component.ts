@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { RecipesService } from '../service/recipes.service';
 import { RecipeResponse } from '../models/recipe.model';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'app-my-recipes',
   standalone: true,
-  imports: [],
+  imports: [PaginationModule],
   templateUrl: './my-recipes.component.html',
   styleUrl: './my-recipes.component.scss'
 })
@@ -15,7 +16,14 @@ export class MyRecipesComponent {
   currentPage: number = 1;
 
   ngOnInit(): void {
-    this.recipeService.listMineRecipes(1,20).subscribe((result) => {
+    this.recipeService.listMineRecipes(1,10).subscribe((result) => {
+      this.recipes = result;
+      this.currentPage = this.recipes.meta.currentPage
+    });
+  }
+
+  pageChanged(event:any) {
+    this.recipeService.list(event.page, event.itemsPerPage).subscribe((result) => {
       this.recipes = result;
       this.currentPage = this.recipes.meta.currentPage
     });
