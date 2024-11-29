@@ -19,6 +19,7 @@ import { BookResponse } from '../models/book.model';
 })
 export class ViewRecipeComponent implements OnInit{
   private readonly recipeService = inject(RecipesService);
+
   private readonly modalService = inject(BsModalService);
 
   id!: number;
