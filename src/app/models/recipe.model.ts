@@ -29,9 +29,24 @@ export interface Recipe {
   portion: number;
   calories: number;
   published_at: Date;
-  categoryId: number;
-  userId: number;
+  category: Category;
+  user: User;
   score: number;
+}
+
+export interface Category{
+  id: number,
+  dateCreated: Date;
+  lastUpdated: Date;
+  name: String;
+}
+
+export interface User{
+    id: number;
+    dateCreated: Date;
+    lastUpdated: Date;
+    name: String;
+    email: String;
 }
 
 export interface Ingrediente{

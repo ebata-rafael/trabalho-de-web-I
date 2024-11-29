@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RecipesService } from '../service/recipes.service';
-import { RecipeResponse } from '../models/recipe.model';
+import { Recipe } from '../models/recipe.model';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-recipe',
@@ -12,17 +13,31 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewRecipeComponent implements OnInit{
   private readonly recipeService = inject(RecipesService);
-  recipes!: RecipeResponse;
-  currentPage: number = 1;
+  private id!: number;
+  recipe!: Recipe;
+
+
+  constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.recipeService.list(1,1).subscribe((result) => {
-      this.recipes = result;
-      this.currentPage = this.recipes.meta.currentPage
+    this.route.paramMap.subscribe((params) => {
+      const idParam = params.get('id');
+      if (idParam) {
+        this.id = parseInt(idParam, 10);
+        this.findData(this.id);
+      }
+    });
+  }
+
+  findData(id: number): void{
+    this.recipeService.getRecipeById(id).subscribe((result) => {
+      if(result != null)
+        this.recipe = result;
     });
   }
 
   getStars(score: number): Array<number> {
     return Array(score).fill(0);
   }
+
 }

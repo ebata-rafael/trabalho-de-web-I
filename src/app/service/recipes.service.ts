@@ -26,9 +26,9 @@ export class RecipesService {
     return this.http.get<RecipeResponse>(this.API + '/mine',{params});
   }
 
-  getRecipeById(id: string): Observable<RecipeResponse> {
+  getRecipeById(id: number): Observable<Recipe> {
     const url = `${this.API}/${id}`;
-    return this.http.get<RecipeResponse>(url);
+    return this.http.get<Recipe>(url);
   }
 
   createRecipe(recipe: CreateRecipeDto): Observable<Recipe>{
