@@ -1,0 +1,17 @@
+<div class="list-group container-fluid">
+  @for (item of recipes.items; track item.id) {
+  <div class="d-flex flex-row mt-3">
+    <a class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ item.name }}</h5>
+          <small class="text-body-secondary">Campo vazio</small>
+        </div>
+        <p class="mb-1">{{ item.description }}</p>
+        <small class="text-body-secondary">And some muted small print.</small>
+    </a>
+    <button type="button" class="btn btn-primary">Publicar</button>
+  </div>
+  }@empty{
+    <span>Usuário não possui nenhuma receita cadastrada</span>
+  }
+</div>

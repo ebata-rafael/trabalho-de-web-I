@@ -3,30 +3,31 @@
     <!-- @for (item of items; track item.name) -->
     @for (item of recipes.items; track item.id)
     {
-    <div class="col-12 col-lg-4 col-xl-3 pb-4">
-
-        <div class="card border-success">
-          <div class="card-header border-success headerCard d-flex justify-content-between">
-            <div class="d-flex align-items-center fst-italic" style="max-width: 60%;">{{ item.name }}</div>
-            <div class="d-flex align-items-center fst-italic">{{ item.portion }} porções</div>
+      <div class="col-12 col-lg-4 col-xl-3 pb-4">
+        <a routerLink="home/recipes/{{item.id}}">
+          <div class="card border-success">
+            <div class="card-header border-success headerCard d-flex justify-content-between">
+              <div class="d-flex align-items-center fst-italic" style="max-width: 60%;">{{ item.name }}</div>
+              <div class="d-flex align-items-center fst-italic">{{ item.portion }} porções</div>
+            </div>
+            <div class="card-body text-success">
+              <img
+                src="https://swiftbr.vteximg.com.br/arquivos/ids/163890-1500-1000/picanha-sanfonada-receita.jpg?v=637254996992530000"
+                class="card-img-top" alt="...">
+            </div>
+            <div class="card-footer bg-transparent border-success formatFlex footerCard">
+              <span class="left">
+                <span class="left">Avaliação: </span>
+                <span *ngFor="let star of getStars(item.score)" class="star-filled">★</span>
+                <span *ngFor="let star of getStars(5 - item.score)" class="star-empty">☆</span>
+              </span>
+              <span class="right">Tempo: {{ item.preparationTime }} min</span>
+            </div>
           </div>
-          <div class="card-body text-success">
-            <img
-              src="https://swiftbr.vteximg.com.br/arquivos/ids/163890-1500-1000/picanha-sanfonada-receita.jpg?v=637254996992530000"
-              class="card-img-top" alt="...">
-          </div>
-          <div class="card-footer bg-transparent border-success formatFlex footerCard">
-            <span class="left">
-              <span class="left">Avaliação: </span>
-              <span *ngFor="let star of getStars(item.score)" class="star-filled">★</span>
-              <span *ngFor="let star of getStars(5 - item.score)" class="star-empty">☆</span>
-            </span>
-            <span class="right">Tempo: {{ item.preparationTime }} min</span>
-          </div>
-        </div>
-    </div>
+        </a>
+      </div>
     }@empty{
-    <span>Nenhuma receita foi encontrada</span>
+      <span>Nenhuma receita foi encontrada</span>
     }
   </div>
   <div class="row">
