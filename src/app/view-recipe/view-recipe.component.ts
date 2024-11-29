@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewRecipeComponent implements OnInit{
   private readonly recipeService = inject(RecipesService);
+
   private id!: number;
   recipe!: Recipe;
 

@@ -26,17 +26,39 @@
       style="max-width: 60rem; max-height: 25rem"
     />
   </div>
-  <div
-    class="container-fluid formatPorcao"
-    style="min-height: 3rem; background-color: #f26530"
-  >
-    <div class="justify-content-center">
-      <img src="group.svg" alt="grupo de pessoas" />
-      <span class="left">Serve: {{ recipe.portion }} pessoas</span>
+  <div class="container text-center formatPorcao" style="min-height: 3rem; background-color: #f26530; border-radius: 25px; max-width: 40rem;">
+    <div class="row">
+        <div class="col container">
+          <img src="group.svg" alt="grupo de pessoas" />
+          <span class="left">Serve: {{ recipe.portion }} pessoas</span>
+          <img src="clock.svg" alt="grupo de pessoas" />
+          <span class="left">Tempo: {{ recipe.preparationTime }} min</span>
+        </div>
+      </div>
     </div>
-    <div class="justify-content-center">
-      <img src="clock.svg" alt="grupo de pessoas" />
-      <span class="left">Tempo: {{ recipe.preparationTime }} min</span>
+  <div>
+    <h2>
+      <span style="color: #097D4C; font-size: 3rem;">|</span>
+      <span style="color: #f26530; font-size: 3rem;">Ingredientes</span>
+    </h2>
+    @for (ingredient of recipe.ingredients; track ingredient.id)
+    {
+      <ul>
+        <li>
+          <span>{{ingredient.amount}}</span>
+          <span> {{ingredient.type}}</span>
+          <span> {{ingredient.name}}</span>
+        </li>
+      </ul>
+    }
+  </div>
+  <div>
+    <h2>
+      <span style="color: #097D4C; font-size: 3rem;">|</span>
+      <span style="color: #f26530; font-size: 3rem;">Modo de Preparo</span>
+    </h2>
+    <div>
+      <span>{{recipe.instructions.step}}</span>
     </div>
   </div>
 }@else{
