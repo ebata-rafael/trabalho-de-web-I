@@ -31,9 +31,9 @@ export class SidebarComponent implements OnInit {
 
   books: BookResponse = { items: [] };
 
-  errorMessage: string = '';
+  errorMessage!: string;
 
-  id: number = 0;
+  id!: number;
 
   passarId(bookId: number){
     console.log(bookId);
