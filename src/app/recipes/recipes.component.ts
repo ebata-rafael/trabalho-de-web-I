@@ -3,12 +3,12 @@ import { RecipesService } from '../service/recipes.service';
 import { RecipeResponse } from '../models/recipe.model';
 import { CommonModule } from '@angular/common';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
   standalone: true,
-  imports: [CommonModule, PaginationModule, RouterModule],
+  imports: [CommonModule, PaginationModule, RouterModule, RouterLink],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.scss'
 })
