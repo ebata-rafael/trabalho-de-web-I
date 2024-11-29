@@ -33,3 +33,29 @@ export interface Recipe {
   userId: number;
   score: number;
 }
+
+export interface Ingrediente{
+  name: string;
+  amount: number;
+  type: string;
+}
+
+export interface Rating{
+  rating: number;
+  comment: string;
+}
+
+export interface Image{
+  id: number;
+  fileName: string;
+  contentLength: number;
+  contentType: number;
+  url: string;
+  recipeId: string;
+}
+
+export interface Instruction{
+  step: string;
+}
+
+
