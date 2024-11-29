@@ -46,11 +46,15 @@ export class CreateRecipeComponent {
           if (this.ingredientes.length) {
             (this.ingredientes.controls as FormGroup[]).forEach(
               (grupo: FormGroup) => {
+                //FOI AQUI QUE EU MEXI
+                const id = grupo.get('id')?.value;
+                const dateCreated = grupo.get('dateCreated')?.value;
+                const lastUpdated = grupo.get('lastUpdated')?.value;
                 const name = grupo.get('name')?.value;
                 const amount = +grupo.get('amount')?.value;
                 const type = grupo.get('type')?.value;
                 this.recipesService
-                  .createIngrediente(resp.id, { name, amount, type })
+                  .createIngrediente(resp.id, { id, dateCreated, lastUpdated, name, amount, type })
                   .subscribe();
               }
             );
@@ -58,9 +62,13 @@ export class CreateRecipeComponent {
             if (this.instructions.length) {
               (this.instructions.controls as FormGroup[]).forEach(
                 (grupo: FormGroup) => {
+                  //MEXI AQUI TAMBÉM, MESMO MOTIVO QUE O DE CIMA
+                  const id = grupo.get('id')?.value;
+                  const dateCreated = grupo.get('dateCreated')?.value;
+                  const lastUpdated = grupo.get('lastUpdated')?.value;
                   const step = grupo.get('step')?.value;
                   this.recipesService
-                    .createInstruction(resp.id, { step })
+                    .createInstruction(resp.id, {id, dateCreated, lastUpdated, step })
                     .subscribe();
                 }
               );

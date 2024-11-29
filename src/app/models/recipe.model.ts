@@ -32,6 +32,17 @@ export interface Recipe {
   category: Category;
   user: User;
   score: number;
+  instructions: Instruction[];
+  ingredients: Ingrediente[];
+}
+
+export interface Ingrediente{
+  id: number;
+  dateCreated: Date;
+  lastUpdated: Date;
+  name: string;
+  amount: number;
+  type: string;
 }
 
 export interface Category{
@@ -49,10 +60,11 @@ export interface User{
     email: String;
 }
 
-export interface Ingrediente{
-  name: string;
-  amount: number;
-  type: string;
+export interface Instruction{
+  id: number;
+  dateCreated: Date;
+  lastUpdated: Date;
+  step: string;
 }
 
 export interface Rating{
@@ -69,8 +81,5 @@ export interface Image{
   recipeId: string;
 }
 
-export interface Instruction{
-  step: string;
-}
 
 
