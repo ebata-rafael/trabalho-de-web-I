@@ -13,11 +13,17 @@
       <span *ngFor="let star of getStars(5 - item.score)" class="star-empty">☆</span>
     </h3>
   </div>
-  <div class=" d-flex justify-content-center">
+  <div class="d-flex justify-content-center mb-5">
     <img src="https://swiftbr.vteximg.com.br/arquivos/ids/163890-1500-1000/picanha-sanfonada-receita.jpg?v=637254996992530000" class="img-fluid" alt="..." style="max-width: 60rem; max-height: 25rem;">
   </div>
-  <div class="container-fluid mt-5 formatPorcao" style=" min-height: 2.5rem; background-color: #f26530;">
-    <img src="group.svg" alt="grupo de pessoas" />
-    <span class="left">Serve: {{item.portion}} pessoas</span>
+  <div class="container-fluid formatPorcao" style=" min-height: 3rem; background-color: #f26530;">
+    <div class="justify-content-center">
+      <img src="group.svg" alt="grupo de pessoas"/>
+      <span class="left">Serve: {{item.portion}} pessoas</span>
+    </div>
+    <div class="justify-content-center">
+      <img src="clock.svg" alt="grupo de pessoas"/>
+      <span class="left">Tempo: {{item.preparationTime}} min</span>
+    </div>
   </div>
 }
