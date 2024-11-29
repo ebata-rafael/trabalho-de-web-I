@@ -6,7 +6,7 @@
       @for (item of recipes.items; track item.id)
       {
         <div class="col-12 col-lg-4 col-xl-3 pb-4">
-          <a routerLink="/home/recipes/{{item.id}}">
+          <a routerLink="/home/recipes/{{item.id}}" style="text-decoration: none;">
             <div class="card border-success">
               <div class="card-header border-success headerCard d-flex justify-content-between">
                 <div class="d-flex align-items-center fst-italic" style="max-width: 60%;">{{ item.name }}</div>

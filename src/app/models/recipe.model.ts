@@ -32,7 +32,7 @@ export interface Recipe {
   category: Category;
   user: User;
   score: number;
-  instructions: Instruction;
+  instructions: Instruction[];
   ingredients: Ingrediente[];
 }
 
