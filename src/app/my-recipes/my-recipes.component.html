@@ -20,11 +20,12 @@
     }@empty{
       <span>Usuário não possui nenhuma receita cadastrada</span>
     }
-  </div>
-  <div class="col-md-6 offset-md-3 d-flex justify-content-center mt-3">
-    @if (recipes) {
-      <pagination class="align-items-center" [totalItems]="recipes.meta.totalItems" [itemsPerPage]="8" (pageChanged)="pageChanged($event)"></pagination>
-    }
-  </div>
+    <div>
+      <div class="col-md-6 offset-md-3 d-flex justify-content-center mt-3">
+        @if (recipes) {
+          <pagination class="align-items-center" [totalItems]="recipes.meta.totalItems" [itemsPerPage]="8" (pageChanged)="pageChanged($event)"></pagination>
+        }
+      </div>
+    </div>
   }
 </div>
