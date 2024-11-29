@@ -26,11 +26,8 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {path: 'create-recipe', component: CreateRecipeComponent},
-      {path: 'recipes', component: RecipesComponent,
-        children: [
-          {path: ':id', component: ViewRecipeComponent}
-        ]
-      },
+      {path: 'recipes', component: RecipesComponent},
+      {path: 'recipes/:id', component: ViewRecipeComponent},
       {path: 'books', component: SidebarComponent, canActivate: [authGuard]},
       {path: 'perfil', component: PerfilComponent, canActivate: [authGuard]},
       {path: 'mine', component: MyRecipesComponent, canActivate: [authGuard]},
