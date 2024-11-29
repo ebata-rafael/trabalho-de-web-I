@@ -1,0 +1,17 @@
+.btn {
+  --bs-btn-border-width: none;
+  margin-right: 10px;
+}
+
+.book-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: flex;
+  width: 100%;
+}
+
+.book-title:hover{
+  background-color: #1dbc7a;
+}

@@ -1,3 +1,4 @@
+import { BookRecipe, BookRecipeDto } from './../models/book.model';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -33,6 +34,10 @@ export class BookService {
     // Define a quantidade de itens que serão retornados
     const params = new HttpParams().set("limit",limit).set('page', page);
     return this.http.get<RecipeResponse>(this.API + '/' + bookId + '/recipes' ,{params});
+  }
+
+  createBookRecipe(bookRecipe: BookRecipeDto): Observable<BookRecipe>{
+    return this.http.post<BookRecipe>(this.API + '/' + bookRecipe.book.id + '/recipes', null);
   }
 
 }
