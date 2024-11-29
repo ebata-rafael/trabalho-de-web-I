@@ -1,16 +1,21 @@
 <div class="list-group container-fluid">
-  <div>
+  @if(recipes)
+  {
     @for (item of recipes.items; track item.id) {
-    <div class="d-flex flex-row mt-3">
+    <div class="d-flex flex-row mt-3 container">
       <a class="list-group-item list-group-item-action">
-          <div class="d-flex w-100 justify-content-between">
+          <div class="d-flex w-100 justify-content-between col-11">
             <h5 class="mb-1">{{ item.name }}</h5>
             <small class="text-body-secondary">Campo vazio</small>
           </div>
           <p class="mb-1">{{ item.description }}</p>
           <small class="text-body-secondary">And some muted small print.</small>
       </a>
-      <button type="button" class="btn btn-primary">Publicar</button>
+      <div class="d-flex flex-column ms-1 col-1">
+        <button type="button" class="btn btn-success mb-1" style="background-color: #f26530; border: #f26530;">Publicar</button>
+        <button type="button" class="btn btn-primary mb-1" style="background-color: #097D4C; border: #097D4C;">Editar</button>
+        <button type="button" class="btn btn-danger mb-1">Excluir</button>
+      </div>
     </div>
     }@empty{
       <span>Usuário não possui nenhuma receita cadastrada</span>
@@ -21,4 +26,5 @@
       <pagination class="align-items-center" [totalItems]="recipes.meta.totalItems" [itemsPerPage]="8" (pageChanged)="pageChanged($event)"></pagination>
     }
   </div>
+  }
 </div>
