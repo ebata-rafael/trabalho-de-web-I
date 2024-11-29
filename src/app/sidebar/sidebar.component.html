@@ -1,22 +1,26 @@
-<div class="d-flex flex-column sidebar">
-  <button class="btn btn-primary mb-2 align-self-end" (click)="createBook()">Novo Livro</button>
-  <div *ngIf="books">
-    <div *ngFor="let book of books.items">
-      <div class="d-flex justify-content-between align-items-center">
-        <span><button class="btn book-title fw-bold">{{ book.name }}</button></span>
+<div class="d-flex w-100 content">
+  <div class="d-flex flex-column sidebar">
+    <button class="btn btn-primary mb-2 align-self-end" (click)="createBook()">Novo Livro</button>
+    <div *ngIf="books">
+      <div *ngFor="let book of books.items">
+        <div class="d-flex justify-content-between align-items-center">
+          <span><button routerLink="/home/books/{{this.id}}/recipes" routerLinkActive="router-link-active"  class="btn book-title fw-bold" (click)="passarId(book.id)">{{ book.name }}</button></span>
 
-        <div class="btn-group" dropdown>
+          <div class="btn-group" dropdown>
 
-          <button id="button-basic" class="btn btn-sm dropdown-toggle" dropdownToggle type="button"
-            aria-controls="dropdown-basic">Editar <span class="caret"></span></button>
+            <button id="button-basic" class="btn btn-sm dropdown-toggle" dropdownToggle type="button"
+              aria-controls="dropdown-basic">Editar <span class="caret"></span></button>
 
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><button class="btn btn-primary btn-nome btn-sm" (click)="update(book.id)">name</button></li>
-            <li role="menuitem"><button class="btn btn-danger btn-sm" (click)="confirmDelete(book.id)">Excluir</button></li>
-          </ul>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><button class="btn btn-primary btn-nome btn-sm" (click)="update(book.id)">name</button></li>
+              <li role="menuitem"><button class="btn btn-danger btn-sm" (click)="confirmDelete(book.id)">Excluir</button></li>
+            </ul>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <app-book-recipe class="w-100 recipe" [bookId]="this.id"></app-book-recipe>
 </div>

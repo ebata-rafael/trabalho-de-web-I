@@ -9,11 +9,13 @@ import { ModalCreateBookComponent } from '../modals/modal-create-book/modal-crea
 import { take } from 'rxjs';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalPatchBookComponent } from '../modals/modal-patch-book/modal-patch-book.component';
+import { BookRecipeComponent } from "../book-recipe/book-recipe.component";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, BsDropdownModule],
+  imports: [CommonModule, ReactiveFormsModule, BsDropdownModule, BookRecipeComponent, RouterLink, RouterOutlet],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   providers: [BsModalService]
@@ -31,6 +33,13 @@ export class SidebarComponent implements OnInit {
 
   errorMessage: string = '';
 
+  id: number = 0;
+
+  passarId(bookId: number){
+    console.log(bookId);
+
+    this.id = bookId;
+  }
 
   ngOnInit(): void {
     this.listar();

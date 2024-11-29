@@ -74,7 +74,7 @@ export class CreateRecipeComponent {
           this.recipe = this.initForm();
         },
         error: () => {
-            this.recipesService.deleteRecipe(12).subscribe();
+            // this.recipesService.deleteRecipe(8).subscribe();
             // this.recipesService.createIngrediente(12, {name: 'costelinha', amount: 2, type: 'kg'}).subscribe();
         }
       });
