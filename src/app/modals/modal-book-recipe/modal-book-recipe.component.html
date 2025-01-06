@@ -7,7 +7,7 @@
 <div class="modal-body">
   @if(books){
     <div *ngFor="let book of books.items">
-      <button class="btn book-title fw-bold" (click)="salvar(book)">{{book.name}}</button>
+      <button class="btn book-title fw-bold" (click)="salvar(book.id)">{{book.name}}</button>
     </div>
   }
 </div>

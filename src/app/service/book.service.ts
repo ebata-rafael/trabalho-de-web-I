@@ -1,4 +1,4 @@
-import { BookRecipe, BookRecipeDto } from './../models/book.model';
+import { BookRecipe, CreateBookRecipeDto } from './../models/book.model';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -36,8 +36,8 @@ export class BookService {
     return this.http.get<RecipeResponse>(this.API + '/' + bookId + '/recipes' ,{params});
   }
 
-  createBookRecipe(bookRecipe: BookRecipeDto): Observable<BookRecipe>{
-    return this.http.post<BookRecipe>(this.API + '/' + bookRecipe.book.id + '/recipes', null);
+  createBookRecipe(bookId: number, createBookRecipeDto: CreateBookRecipeDto): Observable<BookRecipe>{
+    return this.http.post<BookRecipe>(this.API + '/' + bookId + '/recipes', createBookRecipeDto);
   }
 
 }
