@@ -1,4 +1,5 @@
 import { Recipe } from "./recipe.model";
+import { CreateUserDto } from "./user.model";
 
 export interface BookResponse {
   items: Book[];
@@ -6,26 +7,28 @@ export interface BookResponse {
 
 export interface Book {
   id: number;
-  name: string;
   dateCreated: Date;
   lastUpdated: Date;
+  name: string;
+  User: CreateUserDto;
+  Recipes: BookRecipe[];
 }
 
 export interface BookRecipe{
   id: number;
   dateCreated: Date;
   lastUpdated: Date;
-  notes: string;
-  bookId: number;
-  recipe: Recipe;
-}
-
-export interface BookRecipeDto{
   book: Book;
-  recipe: {
-    id: number;
-  }
+  recipe: Recipe;
   notes: string;
 }
 
+export interface CreateBookRecipeDto{
+  recipe: RelationEntityDto;
+  notes: string;
+}
+
+export interface RelationEntityDto{
+  id: number;
+}
 

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import { BookService } from '../../service/book.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { Book, BookRecipeDto, BookResponse } from '../../models/book.model';
+import { BookResponse } from '../../models/book.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -33,8 +33,8 @@ export class ModalBookRecipeComponent {
     });
   }
 
-  salvar(book: Book) {
-    this.bookService.createBookRecipe({book, notes: '', recipe: { id: this.recipeId as number }})
+  salvar(bookId: number) {
+    this.bookService.createBookRecipe(bookId, {recipe: { id: this.recipeId as number }, notes: '' as string})
       .subscribe({
         next: () => {
           console.log('Sucesso');
